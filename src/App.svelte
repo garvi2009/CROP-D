@@ -1,45 +1,70 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import Counter from './lib/Counter.svelte'
+  import cropLogo from "./assets/crop.png";
+  // @ts-ignore
+  import * as toxicity from "@tensorflow-models/toxicity";
+  const threshold = 0;
+  let model = toxicity.load(threshold);
+  model.then((/** @type {any} */ m) => (model = m));
+  let sentence = "";
+  let classification;
+  function predict() {
+    classification = model.classify([sentence]);
+    classification.then((predictions) => {
+      return predictions;
+    });
+  }
+  // @ts-ignore
+  const round = (n, d) => Number(Math.round(n + "e" + d) + "e-" + d);
 </script>
 
 <main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank"> 
-      <img src="/vite.svg" class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank"> 
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
+  <div class="container">
+    {#await model}
+      <h1>...loading</h1>
+    {:then}
+      <img src={cropLogo} class="logo svelte" alt="Svelte Logo" />
+      <h1>CROP-D</h1>
+      <input
+        type="text"
+        placeholder="Type a toxic sentence"
+        bind:value={sentence}
+        on:keydown={(e) => {
+          if (e.key === "Enter") {
+            predict();
+          }
+        }}
+      />
+      {#await classification}
+        <h1>...classifying</h1>
+      {:then predictions}
+        <h1>
+          The toxicity level is {predictions
+            ? round(predictions[6]["results"][0]["probabilities"][1], 3)
+            : 0}
+        </h1>
+      {/await}
+    {/await}
   </div>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
-  </div>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
 </main>
 
 <style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .logo {
     height: 6em;
     padding: 1.5em;
     will-change: filter;
+    transition: all 0.5s ease-in-out;
   }
   .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+    transform: scale(2.1);
   }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
+  .logo {
+    filter: invert(1);
+    transform: rotate(20deg) scale(2);
   }
 </style>
