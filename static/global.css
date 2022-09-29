@@ -1,22 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+
 :root {
     --white: #fff;
     --black: #000;
-    --body-background-color-left: #d1e1f8;
-    --body-background-color-right: var(--white);
-    --nav-color-1: red;
-    --nav-color-2: green;
+    --body-background-color-left: #fffcdf;
+    --body-background-color-right: #ffffff;
     --heading-color-1: #111235;
     --heading-color-2: #5c5fb8;
     --black-shadow: rgba(0, 0, 0, 0.04);
     --btn-primary-color: var(--white);
-    --btn-primary-color-background-color: #4b5092;
-    --btn-sec-color: #436baa;
+    --btn-primary-color-background-color: #1E5128;
+    --btn-sec-color: #1A4D2E;
     --btn-sec-color-background-color: var(--white);
-    --blue-panel: #e4f0ff;
+    --blue-panel: #E6D2AA;
     --purple-panel: #727aef1a;
-    --loader-wrapper-color: var(--blue-panel);
-    --loader-color: var(--heading-color-1)
 }
+
 
 * {
     margin: 0;
@@ -250,7 +249,7 @@ ul li {
     }
 
     .hero-section img {
-        width: 60%;
+        width: 80%;
     }
 
     .hero-text {

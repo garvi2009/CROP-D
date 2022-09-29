@@ -3,7 +3,7 @@
 
 <!-- banner -->
 <div class="content-section-container text-centered bp-100 hero-section">
-  <img src="src/assets/crop.svg" alt="CROP-D" />
+  <img src="src/assets/crop.svg" alt="CROP-D" class="hero-img" />
   <div class="hero-text">
     <h1>
       Classification and Recognition Of <span class="header-bold"
@@ -58,7 +58,7 @@
     </div>
   </div>
   <div class="bp-80" />
-
+<!-- 
   <footer class="content-section-container text-centered">
     <h3>
       <span class="header-bold">CVisor</span> is a project by
@@ -68,5 +68,25 @@
     </h3>
     <h5 class="rm-20 header-bold">Found a Bug? Report @</h5>
     <h5 class="bm-15" style="color:#5c5fb8;">shoryasinghall@gmail.com</h5>
-  </footer>
+  </footer> -->
 </div>
+
+<style>
+  .hero-section{
+    font-family: 'Major Mono Display', monospace;
+  }
+  .hero-img {
+    animation: rotate 10s linear infinite alternate;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(-10deg);
+      filter: hue-rotate(-30deg);
+    }
+    to {
+      transform: rotate(10deg);
+      filter: hue-rotate(30deg);
+    }
+  }
+</style>

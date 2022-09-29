@@ -24,14 +24,15 @@
     <ul class="top-menu">
       <li>&nbsp;</li>
       <li class="header-bold">
-        <a
-          class="github"
-          href="https://github.com/Shoray2002/CVisor"
-          target="_blank">{$loading}</a
-        >
+        <a class="github" href="/" target="_blank">Github</a>
       </li>
     </ul>
   </div>
   <slot />
 </div>
 
+<style>
+  .top-bar {
+    font-family: "Major Mono Display", monospace;
+  }
+</style>
