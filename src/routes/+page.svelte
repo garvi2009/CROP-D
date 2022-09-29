@@ -1,9 +1,72 @@
 <script>
-	import { Alert } from 'flowbite-svelte';
 </script>
 
-<div class="p-8">
-	<Alert>
-		<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
-	</Alert>
+<!-- banner -->
+<div class="content-section-container text-centered bp-100 hero-section">
+  <img src="src/assets/crop.svg" alt="CROP-D" />
+  <div class="hero-text">
+    <h1>
+      Classification and Recognition Of <span class="header-bold"
+        >Plant Diseases</span
+      >
+    </h1>
+    <p />
+    <a class="btn btn-primary" href="/about">DashBoard</a>
+  </div>
+</div>
+
+<!-- features -->
+
+<div class="bp-80" />
+<div class="outer-container">
+  <div class="simple-flex">
+    <div class="content-section-container border-bottom benefits-container">
+      <h2 class="desktop-only bm-40">
+        Features of <span class="header-bold">C.R.O.P-D</span>
+      </h2>
+    </div>
+    <div class="panels-img-container">
+      <h2 class="mobile-only bm-40">
+        <span class="header-bold">The benefits</span> of exercise
+      </h2>
+
+      <div class="panels">
+        <div class="panel panel-blue">
+          <h5 class="header-bold">Stream In Live Feeds</h5>
+          <p>
+            Stream in live CCTV or personal feeds for analysis by selecting
+            different cameras.
+          </p>
+        </div>
+        <div class="panel panel-purple">
+          <h5 class="header-bold">Upload Recorded Videos</h5>
+          <p>Upload recorded videos for analysis.</p>
+        </div>
+        <div class="panel panel-purple">
+          <h5 class="header-bold">Completely Client Side and Real Time</h5>
+          <p>
+            Once the model has been downloaded, the application is completely
+            client side and can be used even offline in real time.
+          </p>
+        </div>
+
+        <div class="panel panel-blue">
+          <h5 class="header-bold">Modularity</h5>
+          <p>The type of analysis can be changed on the fly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bp-80" />
+
+  <footer class="content-section-container text-centered">
+    <h3>
+      <span class="header-bold">CVisor</span> is a project by
+      <a class="website" href="https://lordshoray.is-a.dev/" target="_blank"
+        >Shoray Singhal</a
+      >
+    </h3>
+    <h5 class="rm-20 header-bold">Found a Bug? Report @</h5>
+    <h5 class="bm-15" style="color:#5c5fb8;">shoryasinghall@gmail.com</h5>
+  </footer>
 </div>

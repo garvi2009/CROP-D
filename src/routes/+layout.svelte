@@ -1,37 +1,37 @@
 <script>
-  import "../app.postcss";
-  import {
-    Navbar,
-    NavBrand,
-    NavLi,
-    NavUl,
-    NavHamburger,
-  } from "flowbite-svelte";
+  import { navigating } from "$app/stores";
+  import Loader from "$lib/Loader.svelte";
+  import { loading } from "$lib/loading";
+  $: $loading = !!$navigating;
 </script>
 
-<Navbar let:hidden let:toggle>
-  <NavBrand href="/">
-    <img src="src/assets/crop.png" class="h-14 " alt="CROP-D Logo" />
-    <span
-      class="self-center whitespace-nowrap text-xl font-semibold nav-color"
+{#if $loading}
+  <Loader />
+{/if}
+
+<div class="outer-container">
+  <div class="top-bar">
+    <h3
+      on:click={() => {
+        if (window.location.pathname !== "/") {
+          window.location.pathname = "/";
+        }
+      }}
     >
-      CROP-D
-    </span>
-  </NavBrand>
-  <NavHamburger on:click={toggle} />
-  <NavUl {hidden}>
-    <NavLi href="/" active={true}>Home</NavLi>
-    <NavLi href="/about">About</NavLi>
-    <NavLi href="/">Services</NavLi>
-    <NavLi href="/">Pricing</NavLi>
-    <NavLi href="/">Contact</NavLi>
-  </NavUl>
-</Navbar>
+      <span class="header-bold">C.R.O.P</span>-<span class="header-bold">D</span
+      >
+    </h3>
+    <ul class="top-menu">
+      <li>&nbsp;</li>
+      <li class="header-bold">
+        <a
+          class="github"
+          href="https://github.com/Shoray2002/CVisor"
+          target="_blank">{$loading}</a
+        >
+      </li>
+    </ul>
+  </div>
+  <slot />
+</div>
 
-<slot />
-
-<style>
-  .nav-color {
-    background-color: var(--nav-color-1);
-  }
-</style>
