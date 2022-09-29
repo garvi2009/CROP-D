@@ -1,9 +1,10 @@
 <script>
+  import crop_logo from "$lib/assets/crop.svg"
 </script>
 
 <!-- banner -->
 <div class="content-section-container text-centered bp-100 hero-section">
-  <img src="src/assets/crop.svg" alt="CROP-D" class="hero-img" />
+  <img src={crop_logo} alt="CROP-D" class="hero-img" />
   <div class="hero-text">
     <h1>
       Classification and Recognition Of <span class="header-bold"
@@ -58,7 +59,7 @@
     </div>
   </div>
   <div class="bp-80" />
-<!-- 
+  <!-- 
   <footer class="content-section-container text-centered">
     <h3>
       <span class="header-bold">CVisor</span> is a project by
@@ -72,8 +73,8 @@
 </div>
 
 <style>
-  .hero-section{
-    font-family: 'Major Mono Display', monospace;
+  .hero-section {
+    font-family: "Major Mono Display", monospace;
   }
   .hero-img {
     animation: rotate 10s linear infinite alternate;
