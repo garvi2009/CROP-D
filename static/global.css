@@ -1,0 +1,19 @@
+:root {
+    --body-background-color: #303138;
+    --nav-color-1: red;
+    --nav-color-2: green;
+
+}
+
+
+body {
+    background-color: var(--body-background-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
