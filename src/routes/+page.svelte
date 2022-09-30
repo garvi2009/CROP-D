@@ -2,6 +2,9 @@
   import crop_logo from "$lib/assets/crop.svg";
 </script>
 
+<head>
+  <title>CROP-D|Home</title>
+</head>
 <!-- banner -->
 <div class="content-section-container text-centered bp-100 hero-section">
   <img src={crop_logo} alt="CROP-D" class="hero-img" />
@@ -12,7 +15,7 @@
       >
     </h1>
     <p />
-    <a class="btn btn-primary" href="/about">DashBoard</a>
+    <a class="btn btn-primary" href="/dashboard">DashBoard</a>
   </div>
 </div>
 
@@ -28,7 +31,7 @@
     </div>
     <div class="panels-img-container">
       <h2 class="mobile-only bm-40">
-        <span class="header-bold">The benefits</span> of exercise
+        Features of <span class="header-bold">C.R.O.P-D</span>
       </h2>
 
       <div class="panels">
@@ -73,10 +76,6 @@
 </div>
 
 <style>
-  /* .hero-section {
-word-wrap: break-word;
-    font-family: "Major Mono Display", monospace;
-  } */
   .hero-img {
     animation: rotate 10s linear infinite alternate;
   }

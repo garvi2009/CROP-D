@@ -23,6 +23,8 @@
 }
 
 body {
+    min-width: 100%;
+    min-height: 100vh;
     font-family: "Roboto", sans-serif;
     background: linear-gradient(7.28deg, var(--body-background-color-left) 0%, var(--body-background-color-right) 99.69%);
     overflow-x: hidden;
@@ -326,15 +328,16 @@ ul li {
     }
 
     .panels-img-container img {
-        width: 30%;
+        width: 50%;
     }
 
     .panels {
         display: flex;
-        width: 80%;
+        /* width: 80%; */
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        min-width: 550px;
     }
 
     .panel {

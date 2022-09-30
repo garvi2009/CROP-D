@@ -8,7 +8,6 @@
 {#if $loading}
   <Loader />
 {/if}
-
 <div class="outer-container">
   <div class="top-bar">
     <h3

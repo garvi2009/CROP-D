@@ -84,7 +84,6 @@ declare module '$env/static/private' {
 	export const npm_package_name: string;
 	export const npm_config_prefix: string;
 	export const USER: string;
-	export const npm_config_host: string;
 	export const COLORFGBG: string;
 	export const KDE_SESSION_VERSION: string;
 	export const PAM_KWALLET5_LOGIN: string;
@@ -206,7 +205,6 @@ declare module '$env/dynamic/private' {
 		npm_package_name: string;
 		npm_config_prefix: string;
 		USER: string;
-		npm_config_host: string;
 		COLORFGBG: string;
 		KDE_SESSION_VERSION: string;
 		PAM_KWALLET5_LOGIN: string;
