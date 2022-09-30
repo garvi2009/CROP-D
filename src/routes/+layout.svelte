@@ -4,6 +4,9 @@
   import { loading } from "$lib/loading";
   $: $loading = !!$navigating;
   let is_active = false;
+  let toggle_active = () => {
+    is_active = !is_active;
+  };
 </script>
 
 {#if $loading}
@@ -23,25 +26,31 @@
     </h3>
     <ul class="top-menu">
       <li>&nbsp;</li>
-      <li class="header-bold">
-        <a class="github" href="/" target="_blank">Github</a>
+      <li class="header-bold li-items">
+        <a class="li-item" href="/dashboard">DashBoard</a>
+        <a class="li-item" href="/">Usage</a>
+        <a class="li-item" href="/">Working</a>
+        <a class="li-item" href="/">About</a>
       </li>
     </ul>
     <ul class="top-menu-mobile">
       <li>
-        <div
-          class="hamburger"
-          class:is_active
-          on:click={() => {
-            is_active = !is_active;
-          }}
-        >
+        <div class="hamburger" class:is_active on:click={toggle_active}>
           <div class="hamburger__container">
             <div class="hamburger__inner" />
             <div class="hamburger__hidden" />
           </div>
         </div>
       </li>
+    </ul>
+  </div>
+  <div class="navbar-links top-menu-mobile" class:active={is_active}>
+    <ul class="sub-menu" on:click={toggle_active}>
+      <li><a href="/dashboard">DashBoard</a></li>
+      <li><a href="/">Usage</a></li>
+      <li><a href="/">Working</a></li>
+      <li><a href="/">About</a></li>
+      <li><a href="/" target="_blank">Github</a></li>
     </ul>
   </div>
   <slot />
@@ -169,5 +178,58 @@
   }
   .hamburger__hidden::after {
     top: 13px;
+  }
+
+  .navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: fixed;
+    text-decoration: none;
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+    z-index: 2;
+  }
+
+  .navbar-links li {
+    list-style: none;
+    background-color: var(--white);
+    padding: 5px 0;
+    border-bottom: 2px solid whitesmoke;
+  }
+
+  .navbar-links li a {
+    text-decoration: none;
+    color: var(--black);
+    padding: 0.1rem;
+    display: block;
+  }
+  .navbar-links li:hover {
+    background-color: var(--purple-panel);
+  }
+  @media (max-width: 992px) {
+    .navbar-links {
+      width: 100%;
+      display: none;
+    }
+
+    .navbar-links ul {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .navbar-links li {
+      text-align: center;
+    }
+
+    .navbar-links li a {
+      padding: 0.5rem 1rem;
+    }
+
+    .navbar-links.active {
+      display: flex;
+    }
   }
 </style>
