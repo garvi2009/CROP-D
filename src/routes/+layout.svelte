@@ -188,7 +188,7 @@
     margin: 0;
     padding: 0;
     display: flex;
-    position: fixed;
+    position: absolute;
     text-decoration: none;
     -webkit-user-select: none; /* Chrome all / Safari all */
     -moz-user-select: none; /* Firefox all */
