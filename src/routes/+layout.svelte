@@ -26,6 +26,12 @@
         <a class="github" href="/" target="_blank">Github</a>
       </li>
     </ul>
+    <ul class="top-menu-mobile">
+      <!-- add a burger button -->
+      <li>
+        <input type="checkbox" class="hamburger" />
+      </li>
+    </ul>
   </div>
   <slot />
 </div>
@@ -33,5 +39,11 @@
 <style>
   .top-bar {
     font-family: "Major Mono Display", monospace;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 3.5%;
+    right: 5%;
   }
 </style>
