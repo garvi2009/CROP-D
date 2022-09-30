@@ -20,6 +20,7 @@
           window.location.pathname = "/";
         }
       }}
+      class="title"
     >
       <span class="header-bold">C.R.O.P</span>-<span class="header-bold">D</span
       >
@@ -57,6 +58,9 @@
 </div>
 
 <style>
+  .title {
+    cursor: pointer;
+  }
   .top-bar {
     font-family: "Major Mono Display", monospace;
   }
