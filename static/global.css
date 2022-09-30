@@ -23,10 +23,10 @@
 }
 
 body {
-    min-width: 100%;
-    min-height: 100vh;
     font-family: "Roboto", sans-serif;
     background: linear-gradient(7.28deg, var(--body-background-color-left) 0%, var(--body-background-color-right) 99.69%);
+    overflow-x: hidden;
+    width: fit-content;
 }
 
 .constrain {
@@ -44,8 +44,8 @@ h6 {
 }
 
 h1 {
-    font-size: 64px;
-    line-height: 75px;
+    font-size: 50px;
+    line-height: 60px;
     margin: 15px 0;
 }
 
@@ -116,7 +116,7 @@ ul li {
 }
 
 .content-section-container {
-    padding: 55px 12px;
+    padding: 0px 12px;
 }
 
 .text-centered {
@@ -224,6 +224,16 @@ ul li {
         max-width: 1500px;
     }
 
+    .content-section-container {
+        padding: 55px 12px;
+    }
+
+    h1 {
+        font-size: 64px;
+        line-height: 75px;
+        margin: 15px 0;
+    }
+
     .outer-container {
         margin: 0 10%;
     }
@@ -249,7 +259,7 @@ ul li {
     }
 
     .hero-section img {
-        width: 80%;
+        width: 60%;
     }
 
     .hero-text {

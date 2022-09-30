@@ -1,5 +1,5 @@
 <script>
-  import crop_logo from "$lib/assets/crop.svg"
+  import crop_logo from "$lib/assets/crop.svg";
 </script>
 
 <!-- banner -->
@@ -19,7 +19,7 @@
 <!-- features -->
 
 <div class="bp-80" />
-<div class="outer-container">
+<div class="outer-container features">
   <div class="simple-flex">
     <div class="content-section-container border-bottom benefits-container">
       <h2 class="desktop-only bm-40">
@@ -73,9 +73,10 @@
 </div>
 
 <style>
-  .hero-section {
+  /* .hero-section {
+word-wrap: break-word;
     font-family: "Major Mono Display", monospace;
-  }
+  } */
   .hero-img {
     animation: rotate 10s linear infinite alternate;
   }
@@ -88,6 +89,14 @@
     to {
       transform: rotate(10deg);
       filter: hue-rotate(30deg);
+    }
+  }
+  .features {
+    padding: 2rem;
+  }
+  @media only screen and (min-width: 992px) {
+    .features {
+      padding: 0rem;
     }
   }
 </style>
