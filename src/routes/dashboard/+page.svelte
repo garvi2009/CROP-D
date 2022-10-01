@@ -2,70 +2,245 @@
 </script>
 
 <head>
-  <!-- <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-    crossorigin="anonymous"
-  /> -->
   <title>CROP-D|DashBoard</title>
 </head>
-<div class="container py-4">
-  <div class="row g-4 row-cols-1 row-cols-md-2 mb-4">
-    <!-- live analysis card -->
 
-    <div class=" col">
-      <div class="card h-100 more-purple">
-        <div class="card-header pb-0">
-          <h3 class="fw-bold my-0">Live Analysis</h3>
-        </div>
-        <div class="card-body">
-          <p class="card-text">Stream-in a Live Feed for analysis</p>
-        </div>
-        <div
-          class="card-footer pt-0 d-flex flex-row justify-content-between align-items-center"
-        >
-          <div
-            class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center flex-grow-1"
-          />
-          <div>
-            <button
-              class="btn btn-rounded stream-btn"
-              on:click={() => {
-                window.location.pathname = "/image";
-              }}>Start</button
-            >
+<div class="wrapper">
+  <div class="row">
+    <div class="content-shell">
+      <div class="card card-100">
+        <div class="card-content">
+          <div class="card-heading">
+            <h3>Card Heading</h3>
+          </div>
+          <div class="card-body">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi,
+              laborum.
+            </p>
           </div>
         </div>
+        <div class="card-action">
+          <button>Read More &rarr;</button>
+        </div>
+        <div class="card-bgimg" style="background:whitesmoke;" />
       </div>
+
+      <!-- <div class="content-shell">
+        <div class="card card-50">
+          <div class="card-content">
+            <div class="card-heading">
+              <h3>Card Heading</h3>
+            </div>
+            <div class="card-body">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi,
+                laborum.
+              </p>
+            </div>
+          </div>
+          <div class="card-action">
+            <button>Read More &rarr;</button>
+          </div>
+          <div
+            class="card-bgimg"
+            style="background-image: url('https://images.pexels.com/photos/929824/pexels-photo-929824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');"
+          />
+        </div>
+
+        <div class="card card-50">
+          <div class="card-content">
+            <div class="card-heading">
+              <h3>Card Heading</h3>
+            </div>
+            <div class="card-body">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi,
+                laborum.
+              </p>
+            </div>
+          </div>
+          <div class="card-action">
+            <button>Read More &rarr;</button>
+          </div>
+          <div
+            class="card-bgimg"
+            style="background-image: url('https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');"
+          />
+        </div>
+      </div> -->
     </div>
   </div>
 </div>
 
 <style>
-  * {
+  .wrapper,
+  .row {
+    margin: auto;
+  }
+
+  .wrapper {
+    max-width: 1200px;
+  }
+
+  .row {
+    width: 100%;
+  }
+
+  .content-shell {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .content-shell .card {
+    align-self: stretch;
+  }
+
+  .content-shell .content-shell {
+    flex-direction: column;
+  }
+
+  .content-shell .content-shell .card {
+    height: 25vh;
+  }
+
+  button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    color: #ededed;
+    border: 1px solid #ededed;
+    padding: 1em 1.5em;
+    font-family: "Titillium Web", sans-serif;
+  }
+
+  .card {
+    position: relative;
+    color: #ededed;
+    width: 100%;
+    overflow: hidden;
+    margin: 0.5em;
+  }
+
+  .card:hover {
+    cursor: pointer;
+  }
+
+  .card:hover:after {
+    opacity: 0.5;
+  }
+
+  .card:hover:before {
+    transform: scale(0.925, 0.925);
+    opacity: 1;
+  }
+
+  .card:hover p {
+    opacity: 1;
+  }
+
+  .card:hover .card-content {
+    transform: translateY(0);
+  }
+
+  .card:hover .card-bgimg {
+    transform: scale(1.1);
+  }
+
+  .card:hover .card-action {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  .card-100 .card-content {
+    transform: translateY(75.5%);
+  }
+
+  .card:before,
+  .card:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-  .more-purple {
-    background-color: #7700ff17;
-  }
-  .more-blue {
-    background-color: #0077ff17;
   }
 
-  .btn {
-    background-color: whitesmoke;
-    box-shadow: 0px 0px 2px px rgba(0, 0, 0, 0.75);
-    transition: all 0.3s ease-in-out;
-  }
-  .btn:hover {
-    background-color: #ffffff85;
-    transform: skew(0deg, -5deg);
+  .card:before {
+    opacity: 0;
+    border: 1px solid #ededed;
+    transform-origin: center center;
+    transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1),
+      opacity 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
-  .card-text {
-    font-size: 20px;
+  .card:after {
+    background: #121212;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .card-content,
+  .card-action {
+    position: absolute;
+  }
+
+  .card-content {
+    top: 2em;
+    left: 2em;
+    right: 2em;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: translateY(65%);
+  }
+
+  .card-action {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.75s cubic-bezier(0.075, 0.82, 0.165, 1),
+      transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .card h3 {
+    margin-top: 0;
+  }
+
+  .card p {
+    opacity: 0;
+    transition: opacity 1.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .card-bgimg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: scale(1);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: 768px) {
+    .inner {
+      width: 80%;
+    }
   }
 </style>
